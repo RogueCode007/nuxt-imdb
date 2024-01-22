@@ -1,5 +1,6 @@
 <script setup>
 const query = ref("avengers");
+const error = ref(false);
 function debounce() {
   let timeout;
   return function (fnc, delayMs) {
@@ -22,7 +23,12 @@ const { data: movies } = await useAsyncData(
   "movies",
   async () => {
     const res = await getMovies();
-    return res;
+    console.log(res);
+    if (res) {
+      return res;
+    } else {
+      return [];
+    }
   },
   {
     watch: [query],
@@ -39,7 +45,13 @@ const { data: movies } = await useAsyncData(
         :value="query"
         @input="debounceCreated(() => (query = $event.target.value), 500)"
       />
-      <ul class="mt-10 grid grid-cols-5 gap-[10px]">
+      <p
+        v-if="!movies || !movies.length"
+        class="flex items-center justify-center text-2xl mt-10"
+      >
+        No records!
+      </p>
+      <ul v-else class="mt-10 grid grid-cols-5 gap-[10px]">
         <li v-for="movie in movies" :key="movie.imdbID" class="h-[350px]">
           <nuxt-link
             :to="{

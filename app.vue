@@ -7,3 +7,10 @@
     <NuxtPage />
   </div>
 </template>
+<script setup>
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - My movie Site` : "My Movie Site";
+  },
+});
+</script>
