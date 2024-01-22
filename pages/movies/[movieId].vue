@@ -20,6 +20,9 @@ useHead({
     { name: "twitter:card", content: "summary_large_image" },
   ],
 });
+definePageMeta({
+  middleware: "auth",
+});
 </script>
 <template>
   <div class="w-[300px] outline outline-purple-500">

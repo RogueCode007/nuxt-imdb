@@ -23,7 +23,6 @@ const { data: movies } = await useAsyncData(
   "movies",
   async () => {
     const res = await getMovies();
-    console.log(res);
     if (res) {
       return res;
     } else {
