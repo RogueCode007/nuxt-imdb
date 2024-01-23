@@ -1,4 +1,6 @@
 <script setup>
+import { useIsLoggedIn } from "../composables/useIsLoggedIn";
+
 const isLoggedIn = useIsLoggedIn();
 </script>
 <template>

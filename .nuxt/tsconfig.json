@@ -53,6 +53,9 @@
       "public/*": [
         "../public/*"
       ],
+      "pinia": [
+        "../../../../../..//node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
+      ],
       "#app": [
         "../node_modules/nuxt/dist/app"
       ],
@@ -83,14 +86,17 @@
     "./nuxt.d.ts",
     "../**/*",
     "../node_modules/@nuxtjs/tailwindcss/runtime",
+    "../node_modules/@pinia/nuxt/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
-    ".."
+    "..",
+    "../../../../../..//node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   ],
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxtjs/tailwindcss/runtime/server",
+    "../node_modules/@pinia/nuxt/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "../dist",
